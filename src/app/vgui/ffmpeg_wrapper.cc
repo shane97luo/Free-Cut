@@ -53,7 +53,7 @@ std::string FFmpegWrapper::convertVideo2Gif(const std::string &input_file,
             R"(ffmpeg -ss 00:00:{0} -t {1} -i  {2} -vf "fps=15,scale=640:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 {3})",
             start_time, end_time - start_time, input_file.data(), output_file.data());
 
-    runProgram(cmd, "");
+    auto output = runProgram(cmd, "");
 
-    return "";
+    return output;
 }

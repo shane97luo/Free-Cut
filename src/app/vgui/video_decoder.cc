@@ -3,6 +3,7 @@
 
 #include "ffmpeg_wrapper.h"
 #include <QDebug>
+#include <qurl.h>
 
 VideoDecoder::VideoDecoder(QObject *parent) : QObject(parent)
 {
@@ -83,12 +84,11 @@ bool VideoDecoder::initCodec()
 
 void VideoDecoder::convert2Gif(double begintime, double endtime, const QUrl &targetDir)
 {
+    qDebug() << Q_FUNC_INFO << "begintime: " << begintime << "endtime:" << endtime;
 
-    qDebug() << Q_FUNC_INFO << "begintime: " << begintime << "endtime:" << endtime << " video_file"
-             << _source.toLocalFile();
-    std::string video_path = _source.toLocalFile().toStdString();
+    auto video_path = _source.toLocalFile().toStdString();
 
-    auto target_file = (targetDir.toLocalFile() + "/grap.gif").toStdString();
+    auto target_file = (targetDir.path(QUrl::FullyEncoded).toStdString() + "/grap.gif");
 
     FFmpegWrapper::convertVideo2Gif(video_path, target_file, begintime, endtime);
 }

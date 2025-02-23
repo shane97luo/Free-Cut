@@ -1,6 +1,7 @@
 #include "video_decoder.h"
 
 #include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
@@ -12,7 +13,7 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QCoreApplication::setOrganizationName("FreeCut Studio");
     QCoreApplication::setApplicationName("FreeCutStudio");

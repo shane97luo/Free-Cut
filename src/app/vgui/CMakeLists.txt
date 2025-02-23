@@ -15,8 +15,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Widgets
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick Multimedia REQUIRED )
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick Multimedia REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick Widgets Multimedia REQUIRED )
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick Widgets Multimedia REQUIRED)
 
 # 查找 FFmpeg 头文件目录
 find_path(AVFORMAT_INCLUDE_DIR libavformat/avformat.h)
@@ -60,6 +60,7 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Quick
+    Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Multimedia
     ${AVFORMAT_LIBRARY}
     ${AVCODEC_LIBRARY}

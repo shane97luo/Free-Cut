@@ -2,7 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtMultimedia 5.15
-import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs 1.3 as OriDialogs
+import Qt.labs.platform 1.1 as LabControls
 
 import "qrc:/javascripts/global.js" as GlobalJs
 
@@ -106,11 +107,8 @@ Item {
 
         Row {
 
-            // Layout.fillWidth: true
-            //            Layout.preferredHeight: 20
             Layout.alignment: Qt.AlignHCenter
 
-            //            anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
 
             Label {
@@ -131,8 +129,6 @@ Item {
 
         Row {
 
-            // Layout.fillWidth: true
-            //            Layout.preferredHeight: 40
             Layout.alignment: Qt.AlignHCenter
 
             spacing: 15
@@ -150,21 +146,21 @@ Item {
 
             Button {
 
-                FileDialog {
+                LabControls.FolderDialog {
                     id: saveAsDialog
-                    onAccepted: {
-                        console.log("saveAsDialog: ", saveAsDialog.fileUrl);
 
-                        // 转换gif
-                        console.log("转换gif", rangeSlider.first.value, rangeSlider.second.value);
+                    title: qsTr("Save As")
+
+                    onAccepted: {
+                        console.log("saveAsDialog: ", saveAsDialog.currentFolder, "转换gif", rangeSlider.first.value, rangeSlider.second.value);
 
                         var begin = rangeSlider.first.value / 1000.0;
                         var end = rangeSlider.second.value / 1000.0;
-                        videoDecoder.convert2Gif(begin, end, saveAsDialog.fileUrl);
+                        videoDecoder.convert2Gif(begin, end, saveAsDialog.currentFolder);
                     }
                 }
 
-                text: "转换gif"
+                text: qsTr("转换gif")
                 onClicked: {
                     if (mediaPlayer.status === MediaPlayer.NoMedia) {
                         console.log("请先选择视频文件");
@@ -176,7 +172,9 @@ Item {
 
             Label {
                 text: formatTime(mediaPlayer.position) + " / " + formatTime(mediaPlayer.duration)
-                anchors.verticalCenter: parent.verticalCenter
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                }
             }
         }
 
@@ -190,7 +188,7 @@ Item {
     }
 
     // 文件选择对话框
-    FileDialog {
+    OriDialogs.FileDialog {
         id: fileDialog
         onAccepted: videoDecoder.loadVideo(fileDialog.fileUrl)
     }
@@ -207,8 +205,10 @@ Item {
 
     // 时间格式化函数
     function formatTime(milliseconds) {
-        if (!milliseconds)
+        if (!milliseconds) {
             return "00:00";
+        }
+
         let seconds = Math.floor(milliseconds / 1000);
         let minutes = Math.floor(seconds / 60);
         seconds = seconds % 60;
@@ -228,7 +228,6 @@ Item {
     }
 
     Component.onCompleted: {
-        // 设置视频保持宽高比
         videoOutput.autoOrientation = true;
         videoOutput.fillMode = VideoOutput.PreserveAspectFit;
 
