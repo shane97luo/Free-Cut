@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/udisks/icon_multiple_choice_selected.png</file>
+        <file>icons/udisks/icon_multiple_choice_unselect.png</file>
+        <file>icons/40x40/home40.png</file>
+        <file>icons/32x32/icon_set_wifi32.png</file>
+        <file>icons/40x40/icon_set_language40.png</file>
+        <file>icons/32x32/icon_set_advanced setting32.png</file>
+        <file>icons/32x32/icon_set_cleaning tray32.png</file>
+        <file>icons/32x32/icon_set_cloud32_nor.png</file>
+        <file>icons/32x32/icon_set_lamp32.png</file>
+        <file>icons/32x32/icon_set_language32.png</file>
+        <file>icons/32x32/icon_set_local machine32.png</file>
+        <file>icons/32x32/icon_set_maintenance32.png</file>
+        <file>icons/32x32/icon_set_platform lifting32.png</file>
+        <file>icons/32x32/icon_set_rouse32.png</file>
+        <file>icons/32x32/icon_advanced_setting_calibration.png</file>
+        <file>icons/32x32/icon_advanced_setting_compensate.png</file>
+        <file>icons/32x32/icon_advanced_setting_Edge.png</file>
+        <file>icons/32x32/icon_advanced_setting_light_intensity.png</file>
+        <file>icons/32x32/icon_advanced_setting_Light_intensity_automatic.png</file>
+        <file>icons/32x32/icon_set_add.png</file>
+        <file>icons/32x32/icon_set_art bag32.png</file>
+        <file>icons/32x32/icon_set_cj32.png</file>
+        <file>icons/32x32/icon_set_constant_temperature.png</file>
+        <file>icons/32x32/icon_set_datetime32.png</file>
+        <file>icons/32x32/icon_set_software32.png</file>
+        <file>icons/32x32/icon_set_print32.png</file>
+        <file>icons/32x32/icon_set_log32.png</file>
+        <file>icons/40x40/icon_delete40.png</file>
+        <file>icons/24x24/icon_invisible24.png</file>
+        <file>icons/24x24/icon_visible24.png</file>
+        <file>icons/40x40/icon_capitalize40_nor.png</file>
+        <file>icons/40x40/icon_capitalize40_sel.png</file>
+        <file>icons/24x24/icon_error24.png</file>
+        <file>icons/280x280/placeholder280.png</file>
+        <file>icons/80x80/icon_set_reset80_nor.png</file>
+        <file>icons/80x80/icon_set_reset80_pressed.png</file>
+        <file>icons/80x80/icon_set_zero seeking80_nor.png</file>
+        <file>icons/80x80/icon_set_zero seeking80_pressed.png</file>
+        <file>icons/80x80/button_set_down_nor.png</file>
+        <file>icons/80x80/button_set_down_pressed.png</file>
+        <file>icons/80x80/button_set_up_nor.png</file>
+        <file>icons/80x80/button_set_up_pressed.png</file>
+        <file>icons/24x24/icon_warning24.png</file>
+    </qresource>
+</RCC>
