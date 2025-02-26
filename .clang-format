@@ -1,21 +1,9 @@
-# Copyright (C) 2016 Olivier Goffart <ogoffart@woboq.com>
-#
-# You may use this file under the terms of the 3-clause BSD license.
-# See the file LICENSE from this package for details.
 
-# This is the clang-format configuration style to be used by Qt,
-# based on the rules from https://wiki.qt.io/Qt_Coding_Style and
-# https://wiki.qt.io/Coding_Conventions
-
----
 # Webkit style was loosely based on the Qt style
 BasedOnStyle: WebKit
 
 Standard: c++17
 
-# Column width is limited to 100 in accordance with Qt Coding Style.
-# https://wiki.qt.io/Qt_Coding_Style
-# Note that this may be changed at some point in the future.
 ColumnLimit: 100
 # How much weight do extra characters after the line length limit have.
 # PenaltyExcessCharacter: 4

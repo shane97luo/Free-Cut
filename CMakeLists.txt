@@ -9,7 +9,7 @@ include(cmake/build.cmake)
 add_subdirectory(src/app)
 
 
-option(RUN_TESTS "Run tests" OFF)
+option(RUN_TESTS "Run tests" ON)
 if (RUN_TESTS)
     enable_testing()
     add_subdirectory(src/tests)

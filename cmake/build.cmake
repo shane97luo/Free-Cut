@@ -1,10 +1,10 @@
 
 cmake_minimum_required(VERSION 3.20)
 
-# set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    # 检查编译器是否支持 C++20
     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 10)
         message(FATAL_ERROR "GCC ≥10 或 Clang ≥10 需要支持 C++20")
     endif()

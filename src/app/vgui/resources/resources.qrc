@@ -43,5 +43,6 @@
         <file>icons/80x80/button_set_up_nor.png</file>
         <file>icons/80x80/button_set_up_pressed.png</file>
         <file>icons/24x24/icon_warning24.png</file>
+        <file>icons/200x200/cursor.png</file>
     </qresource>
 </RCC>

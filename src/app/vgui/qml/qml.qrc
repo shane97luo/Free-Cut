@@ -2,10 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>javascripts/global.js</file>
-        <file>workspace/Timeline.qml</file>
+        <file>workspace/Trackview.qml</file>
         <file>workspace/VideoPlayer.qml</file>
         <file>workspace/WorkSpace.qml</file>
-        <file>workspace/TrackDelegate.qml</file>
         <file>common/IconButton.qml</file>
         <file>home/Home.qml</file>
         <file>home/Enter.qml</file>

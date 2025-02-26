@@ -185,6 +185,12 @@ Item {
             from: 0
             to: 100
         }
+
+        Trackview {
+            id: track
+
+            Layout.fillWidth: Qt.AlignHCenter
+        }
     }
 
     // 文件选择对话框
